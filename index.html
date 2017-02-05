@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <title>华盛顿邮报招聘有态度的新闻人</title>
+    <link rel="stylesheet" href="src/swiper.min.css">
+    <link rel="stylesheet" href="src/animate.min.css">
+    <script type="text/javascript">
+        (function () {
+            window.onresize=function(){ 
+               resizeClient();
+            };
+            resizeClient();
+            function resizeClient(){
+                var html = document.documentElement;
+                var windowWidth = html.clientWidth;
+                if(windowWidth>540){
+                    windowWidth=540;
+                }
+                if(windowWidth<320){
+                    windowWidth=320;
+                }
+                html.style.fontSize = windowWidth/375*100  + 'px';
+            }
+        })();
+    </script>
+    <style>
+        html {
+            color:#fff;
+            background:#000;
+            text-align: center;
+            font-family:'PingFangSC-Light',微软雅黑,'Avenir', Helvetica, Arial, sans-serif;
+        }
+        html,body {
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+        }
+        body {
+            max-width:540px;
+            margin:0 auto;
+        }
+        dl,dt,dd{
+            margin:0;
+            padding:0;
+            font-style: normal;
+        }
+        a {
+            color:#fff;
+        }
+        .header {
+            max-width:540px;
+            display: block;
+            font-size:0.22rem;
+            width:100%;
+            position: fixed;
+            line-height:0.6rem;
+            background:rgba(255,255,255,0.1);
+            z-index:1000;
+        }
+        /*背景音乐icon*/
+        /*.bgm-btn {
+            position: absolute;
+            top: 0.8rem;
+            right: 16px;
+            width: 30px;
+            height: 30px;
+            background-size: 100%;
+            background-image: url(http://s3img.city.sina.com.cn/activity/common/large/9f9acca088ab3e67f12eb612bdd12c07.png);
+            z-index: 10000;
+            animation: myrotate 5s linear 0s infinite normal;
+            -webkit-animation: myrotate 5s linear 0s infinite normal;
+        }
+        .bgm-btn.mut {
+            background-position: 0px -30px;
+            -webkit-animation: none;
+        }*/
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            font-size:0.18rem;
+            background: url(src/newsbg.jpg) no-repeat left top;
+            background-size: 100% 100%;
+        }  
+        .swiper-container-vertical>.swiper-pagination-bullets {
+            right:5px;
+        }
+        .logo {
+            width:50%;
+        }
+        .title {
+            padding-top:1rem;
+            font-size:0.2rem;
+            font-weight: normal;
+        }
+        .content {
+            position: absolute;
+            width:100%;
+            padding:0 0.2rem;
+            box-sizing: border-box;
+            top:50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            line-height:1.8em;
+        }
+        .title ~ .content {
+            margin-top: 0.4rem;
+        }
+        .sub_title {
+            font-size:0.15rem;
+            text-align: left;
+            padding-top:0.1rem;
+        }
+        .sub_content {
+            font-size:0.14rem;
+            line-height:1.5em;
+            text-align: left;
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .swiper-pagination-bullet {
+            background:#fff;
+        }
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #007aff;
+        }
+        @keyframes myrotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            25% {
+                -webkit-transform: rotate(-90deg);
+            }
+            50% {
+                -webkit-transform: rotate(-180deg);
+            }
+            75% {
+                -webkit-transform: rotate(-270deg);
+            }
+            100% {
+                -webkit-transform: rotate(-360deg);
+            }
+        }
+        #array {
+            position: absolute;
+            z-index: 999;
+            width: 0.2rem; 
+            height: 0.18rem;
+            bottom:0.2rem;
+            -webkit-animation: start 1.5s infinite ease-in-out;
+        }
+        @keyframes start {
+            0%, 30% {
+                opacity: 0;
+                transform: translate(0,10px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translate(0,0);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(0,-8px);
+            }
+        }
+        audio {
+            position: fixed;
+            top:100px;
+            z-index:10000;
+            display: none;
+            width:0;
+            height:0;
+        }
+    </style> 
+</head>
+<body>
+    <header class="header">
+        华盛顿邮报招聘有态度的新闻人
+    </header>
+    <div class="swiper-container">
+        <!--添加背景音乐-->
+       <!--  <div class="bgm-btn" id="bgm-btn"></div> -->
+        <!-- <audio id="bgm" src="src/bgmcut.mp3" loop></audio> -->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h2 class="title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s">
+                    <img class="logo" src="src/logo.jpg" />
+                </h2>
+                <div class="content content_0">
+                    <div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                        中美媒体的先锋<br/>
+                        期待能够有你<br/>
+                        创造未来<br/>
+                        你，不能缺席
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="title ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s">
+                    我们是谁？
+                </h2>
+                <div class="content text-justify">
+                    <div class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                        《阳光新闻•华盛顿邮报》是阳光新闻集团与美国华盛顿邮报战略合作，共同打造的中文数字媒体，是差异化、定制化、权威化的新闻 资讯平台，是中美两国媒体合作的新桥梁，共享世界第一手的新闻资源与资讯。
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s">
+                    我们需要谁？
+                </h2>
+                <div class="content">
+                    <div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                        有强烈的好奇心，愿意尝试更多的新事物<br/>
+                        在媒体行业有一定的经验和心得<br/>
+                        熟练运用中文和一门外语<br/>
+                        能够熟练驾驭文字，进行社会调研、采访和举办活动<br/>
+                        但如果你敬业且富有激情，以上没有，我们也可以培养
+                     </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="title ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s">
+                    工作内容
+                </h2>
+                <div class="content">
+                     <div class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                        进行深入的话题研究和稿件撰写<br/>
+                        独特视角审视这个世界并告诉这个世界<br/>
+                        调查、研究新闻人物和事件<br/>
+                        采访学者、政要、企业家<br/>
+                        用美丽而准确的文字、图片描绘你的世界<br/>
+                        时刻关注世界上值得注意的新闻与突发事件
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+
+                <h2 class="title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s">
+                    我们可以提供
+                </h2>
+                <div class="content">    
+                    <div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                        强大的专家团队和丰富的社会资源<br/>
+                        广泛的发布平台和展现机会<br/>
+                        多元宽松的思想环境<br/>
+                        结识全球才俊的网络<br/>
+                        新媒体崛起带来的经验与荣耀
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="title ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s">
+                    副主编招聘需求
+                </h2>
+                <div class="content">    
+                    <div class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                        <dl>
+                            <dt class="sub_title">工作内容：</dt>
+                            <dd class="sub_content">
+                                1.负责华盛顿邮报中文网页端和移动端整体内容规划、整合及创新，提高影响力；<br/>
+                                2.协同运营完成整体内容运营推广工作；<br/>
+                                3.关注业务数据，对内容分类/专题质量的数据进行监控和分析，并能及时做出调整；<br/>
+                                4.负责优化完善编辑小组各项工作制度及流程规范，管理部门日常工作。<br/>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                        <dl>
+                            <dt class="sub_title">任职资格：</dt>
+                            <dt class="sub_content">
+                                1.本科以上学历，新闻、传媒专业优先，条件优秀者可以放宽；<br/>
+                                2.有5年以上媒体工作经验，3年以上国际政治类从业经验者优先，有一定的管理编辑团队经验；<br/>
+                                3.熟悉内容采编流程；<br/>
+                                4.英语通过六级或较强的英语听说读写能力。
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="title ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s">编辑招聘需求</h2>
+                <div class="content">    
+                    <div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" 
+                     swiper-animate-delay="0.5s">
+                        <dl> 
+                            <dt class="sub_title">工作内容： </dt>
+                            <dd class="sub_content">
+                                1.负责每期新闻采编，选题策划等工作;<br/>
+                                2.对华盛顿邮报英文网站的文章进行翻译、编辑，整理成符合发表在国内的中文文章；<br/>
+                                3.负责每期内容的修改、校对和排版工作；<br/>
+                                4.对每期定稿内容按时发布，并及时反馈问题。<br/>
+                            </dd>
+                        </dl>
+                    </div>
+                     <div class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" 
+                     swiper-animate-delay="1s">
+                        <dl>
+                            <dt class="sub_title">任职资格：</dt>
+                            <dd class="sub_content">
+                                1.本科以上学历，新闻、传媒专业优先，条件优秀者可以放宽；<br/>
+                                2.有参加过专业编辑培训者优先；<br/>
+                                3.2年以上的新闻编辑从业经验；硕士研究生以上可以适当放宽；<br/>
+                                4.良好的文字功底，较强的专题策划和信息采编和排版能力；<br/>
+                                5.英语六级者优先；<br/>
+                                6.有新闻职业理想和敬业精神。
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="title ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s">怎么联系？</h2>
+                <div class="content ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0s">   
+                    个人标准简历一份<br/>
+                    讲述你的经历与故事<br/>
+                    谈谈你媒体的过去<br/>
+                    和你对媒体未来的理解<br/>
+                    以上一切，发送至<a href="Mailto:hr@sunnewsgroup.cn">hr@sunnewsgroup.cn</a>
+                </div>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>     
+        <img src="src/arrow.png" id="array">  
+    </div>
+    <script src="src/zepto.min.js"></script>
+    <script src="src/swiper.jquery.min.js"></script>
+    <script src="src/swiper.animate.min.js"></script>
+    <script>        
+        // var firstTouch = true;
+        // var bgm = document.getElementById("bgm");
+        // $('html').on('touchstart',function(){
+        //     if(firstTouch){
+        //         firstTouch = false;
+        //        bgm.play();
+        //     } 
+        // });
+        // $("#bgm-btn").on("touchstart",function(){
+        //     if(bgm.paused){
+        //         bgm.play();
+        //         $("#bgm-btn").removeClass("mut");
+        //     }else{
+        //         bgm.pause();
+        //         $("#bgm-btn").addClass("mut");
+        //     }
+        // });
+        var $arrow = $("#array");
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'vertical',
+            loop: false,
+            paginationClickable: true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                swiperAnimateCache(swiper); //隐藏动画元素 
+                swiperAnimate(swiper); //初始化完成开始动画
+            }, 
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            onTransitionEnd: function(swiper){
+                swiperAnimate(swiper);
+            },
+            onSlideChangeStart: function(swiper){
+                if(swiper.isEnd){
+                    $arrow.hide();
+                }else{
+                    $arrow.show();
+                }
+            }
+
+        })        
+    </script>
+</body>
+</html>
